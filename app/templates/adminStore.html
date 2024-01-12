@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Store</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/adminstorestyle.css') }}">
+  <script src="../static/js/logout.js" defer></script>
+  <script src="../static/js/adminstore.js" defer></script>
+</head>
+<body>
+<div class="adminbox">
+	<div class="admininp">
+    <input id="img" class="imginp" placeholder=" ImgUrl* ">
+		<input id="name" class="nameinp" placeholder=" Name* ">
+		<input id="sname" class="scinameinp" placeholder=" Scientific Name* ">
+		<input id="price" class="priceinp" placeholder=" Price ">
+		<input id="quantity" class="quantityinp" placeholder=" Quantity ">
+	</div>
+	<div class="adminbtn">
+		<button id="addbtn" class="addbtn">Add</button>
+		<button id="delbtn"class="delbtn">Delete</button>
+		<button id="updatebtn" class="updatebtn">Update</button>
+	</div>
+</div>
+
+<table id="myTable" class="display">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Scientific Name</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Table data will be dynamically populated here -->
+	<!-- Scientific Name, Name, Price, Quantity as forms/inputs -->
+  </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="../static/js/admin.js" defer></script>
+
+
+</body>
+</html>

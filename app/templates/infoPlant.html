@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardenia</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/infostyle.css') }}"
+  />
+    <script src="../static/js/infoPlant.js" defer></script>
+    <script src="../static/js/storePlant.js" defer></script>
+    <script src="../static/js/logout.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>gardenia.</h1></a>
+      <nav>
+        <ul class="header-ul">
+          <li><a href="/checkout"><img src="../static/images/shopping-cart.png" width="20px" height="20px" class="shopping_cart" alt="shopping_cart" id="store-plant-shopCart-img" /><span id="cart-quantity"></span></a></li>
+          <li><a href="/info">Info</a></li>
+          <li><a href="/store">Store</a></li>
+          <li><a href="{% if current_user.is_authenticated %}/logout{% else %}/login{% endif %}" id="login">{% if current_user.is_authenticated %}Logout{% else %}Login{% endif %}</a></li>
+        </ul>
+      </nav>
+  </header>
+
+    <main>
+      <div class="container">
+        <div class = "imgContainer">
+            <img src="" width=100% height=80% alt="Plant pic" id="plantImg">
+        </div>
+        <div class = "infoContainer">
+          <p id="plantName"></p>
+          <p id="plantSpecies"></p>
+            <table>
+                <tr>
+                  <td><img src="../static/images/recycling.png" width="15" height="15"> <b>Cycle:</b> <p id="cycle"></p></td>
+                  <td><img src="../static/images/drop.png" width="15" height="15"> <b>Watering:<p id="watering"></p></b> </td>
+                </tr>
+                <tr>
+                  <td><img src="../static/images/leaves-of-a-plant.png" width="15" height="15"> <b>Propogation:</b> <p id="propogation"></p></td>
+                  <td><img src="../static/images/hardy.png" width="20" height="20"> <b>Hardiness:</b> <p id="hardiness"></p></td>
+                </tr>
+                <tr>
+                  <td><img src="../static/images/sun.png" width="15" height="15"> <b>Sun:<p id="sun"></p></b></td>
+                  <td><img src="../static/images/pine-cone.png" width="15" height="15"> <b>Cones: <p id="cones"></p></b></td>
+                </tr>
+                <tr>
+                  <td><img src="../static/images/leaf.png" width="15" height="15"> <b>Leaf:<p id="leaf"></p></b></td>
+                  <td><img src="../static/images/palette.png" width="15" height="15"> <b>Leaf color:<p id="leafColor"></p></b></td>
+                </tr>
+                <tr>
+                  <td><img src="../static/images/growth-icon-15.png" width="20" height="20"> <b>Growth rate:<p id="growth"></p></b></td>
+                  <td><img src="../static/images/plant.png" width="15" height="15"> <b>Care level:<p id="care"></p></b></td>
+                </tr>
+                </table>
+            <button class="inStore"><a class ="Storelink" href="">Find in Store</a></button>
+            <button class='share'>Share <img src="../static/images/share.png" width="12" height="12"></button>
+            <!-- <button class="cart"><a class ="Cartlink" href="">Add to Cart</a></button> -->
+        </div>
+      </div>
+      <div class="water">
+        <h3><img src="../static/images/drop2.png" width="20" height="20"> Watering</h3>
+        <p id="Pwatering">None Found.</p>
+      </div>
+      <div class="sun">
+        <h3><img src="../static/images/sun2.png" width="20" height="20"> Sunlight</h3>
+        <p id="Psun">None Found.</p>
+      </div>
+      <div class="pruning">
+        <h3><img src="../static/images/pruning-shears.png" width="20" height="20"> Pruning</h3>
+        <p id="Ppruning">None Found.</p>
+      </div>
+    </main>
+
+    <footer>
+      <img width="50px" height="50px" src="../static/images/GardeniaLogo.png">
+      <p>@2023 Gardenia- all rights reserved</p>
+    </footer>
+  </body>
+</html>
